@@ -6,7 +6,7 @@
 ///|                                        |\\\
 ///+-----------------------QUẢN-TIẾN-NGHĨA--+\\\
 
-/// CODEFORCES TEMPLATE - version 1.0.2
+/// CODEFORCES TEMPLATE - version 1.0.3
 /// © 2019 Quản Tiến Nghĩa (a.k.a CuteTN)
 
 /// Hạnh đáng iu
@@ -111,21 +111,13 @@ auto mmin(auto x)              { return x;                     }
 auto mmin(auto x, auto y)      { return min(x,y);              }
 auto mmin(auto x, auto... args){ return min(x, mmin(args...)); }
 
-void BSUpdate(ll&l, ll&r, bool upCondition_)
+ll sgn(auto a)
+/** get the sign of a number a */
 {
-    if(upCondition_)
-        l = (l+r)/2 + 1;
-    else
-        r = (l+r)/2 - 1;
+    if(a == 0)
+        return 0;
+    return (a<0? -1:1);
 }
-void BSUpdate(double&l, double&r, bool upCondition_)
-{
-    if(upCondition_)
-        l = (l+r)/2 + 1;
-    else
-        r = (l+r)/2 - 1;
-}
-
 
 void varMod(ll & x, bool negativeAllow = false)
 {
@@ -142,7 +134,7 @@ void varMod(int& x, bool negativeAllow = false)
 }
 
 
-bool isEqf(auto a, auto b)
+bool isf(auto a, auto b)
 /** is Equal for floating point number */
 {
     return (double)abs(a - b) <= eps;
@@ -197,6 +189,17 @@ void read(long long&a)  { scanf("%lld" , &a); }
 void read(float&a)      { scanf("%f"   , &a); }
 void read(double&a)     { scanf("%lf"  , &a); }
 void read(char&a)       { scanf("%c"   , &a); }
+void readc(char&a)
+/** ignore all unneccesary characters */
+{
+    char tempChar;
+    do
+    {
+        scanf("%c", &tempChar);
+    }
+    while(ENDSTRING_CHARACTER.count(tempChar) != 0);
+    a = tempChar;
+}
 void read(string&a)
 {
     string res = "";
@@ -278,7 +281,6 @@ void onEndMain()
 int main()
 {
     onStartMain();
-
 
     onEndMain();
 }
