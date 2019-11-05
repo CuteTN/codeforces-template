@@ -6,13 +6,35 @@
 ///|                                        |\\\
 ///+-----------------------QUẢN-TIẾN-NGHĨA--+\\\
 
-/// CODEFORCES TEMPLATE - version 1.0.3
+/// CODEFORCES TEMPLATE - version 1.0.4
 /// © 2019 Quản Tiến Nghĩa (a.k.a CuteTN)
 
 /// Hạnh đáng iu
 /// Hạnh dễ thưn
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <sstream>
+#include <queue>
+#include <deque>
+#include <bitset>
+#include <iterator>
+#include <list>
+#include <stack>
+#include <map>
+#include <set>
+#include <functional>
+#include <numeric>
+#include <utility>
+#include <limits>
+#include <time.h>
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
 using namespace std;
 
 /// OPTIMIZE SOMETHING I DONT EVEN UNDERSTAND
@@ -22,10 +44,11 @@ using namespace std;
 
 /// USEFUL MACROS
 #define endl '\n'
-#define Fi first
-#define Se second
-#define Pb push_back
-#define Mp make_pair
+#define fff first
+#define sss second
+#define Pbb push_back
+#define Mpp make_pair
+#define Ass assign
 #define is ==
 #define isnt !=
 #define momo % MODULO
@@ -183,7 +206,7 @@ void print(Type a, Args... args)
     print(args...);
 }
 
-const set<char> ENDSTRING_CHARACTER = {'\n', ' '};
+const set<char> ENDSTRING_CHARACTER = {'\n', ' ', '\r', '\0'};
 void read(int&a)        { scanf("%d"   , &a); }
 void read(long long&a)  { scanf("%lld" , &a); }
 void read(float&a)      { scanf("%f"   , &a); }
@@ -196,26 +219,20 @@ void readc(char&a)
     do
     {
         scanf("%c", &tempChar);
+        print((int)tempChar);
     }
     while(ENDSTRING_CHARACTER.count(tempChar) != 0);
     a = tempChar;
 }
-void read(string&a)
+void read(string&a, int maxLength = 2000000)
 {
-    string res = "";
-    char tempChar;
-    while (true)
+    char tempChrArr[maxLength];
+    do
     {
-        scanf("%c", &tempChar);
-        if(ENDSTRING_CHARACTER.count(tempChar) != 0)
-        {
-            if(res.size() != 0)
-                break;
-        }
-        else
-            res = res + tempChar;
+        gets(tempChrArr);
     }
-    a = res;
+    while(ENDSTRING_CHARACTER.count(tempChrArr[0] != 0));
+    a = tempChrArr;
 }
 void read(pair<auto,auto>&a)
 {
@@ -247,6 +264,12 @@ void readVector(vector<auto>&vectorName, ll startPos, ll endPos)
         read(vectorName[i]);
 }
 
+void readc(char&a, auto&... arg)
+{
+    readc(a);
+    readc(arg...);
+}
+
 
 /// START & END
 void onStartMain()
@@ -268,6 +291,13 @@ void onEndMain()
     exit(0);
 }
 
+void solution();
+int main()
+{
+    onStartMain();
+    solution();
+    onEndMain();
+}
 
 ///~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\\
 /// ALGORITHM TEMPLATE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\\
@@ -278,11 +308,9 @@ void onEndMain()
 /// SOLUTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\\
 ///~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\\
 
-int main()
+void solution()
 {
-    onStartMain();
 
-    onEndMain();
 }
 
 /// Hạnh đáng iu

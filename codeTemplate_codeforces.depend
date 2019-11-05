@@ -2,6 +2,28 @@
 1572400523 source:d:\c++\codetemplate_codeforces\main.cpp
 	<bits/stdc++.h>
 
-1572529195 source:d:\c++\codetemplate_codeforces\codeforces-template\main.cpp
-	<bits/stdc++.h>
+1572961407 source:d:\c++\codetemplate_codeforces\codeforces-template\main.cpp
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<sstream>
+	<queue>
+	<deque>
+	<bitset>
+	<iterator>
+	<list>
+	<stack>
+	<map>
+	<set>
+	<functional>
+	<numeric>
+	<utility>
+	<limits>
+	<time.h>
+	<math.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<assert.h>
 
