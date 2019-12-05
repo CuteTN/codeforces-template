@@ -6,7 +6,7 @@
 ///|                                        |\\\
 ///+-----------------------QUẢN-TIẾN-NGHĨA--+\\\
 
-/// CODEFORCES TEMPLATE - version 1.0.4
+/// CODEFORCES TEMPLATE - version 1.0.5
 /// © 2019 Quản Tiến Nghĩa (a.k.a CuteTN)
 
 /// Hạnh đáng iu
@@ -205,34 +205,40 @@ void print(Type a, Args... args)
     print(ELEMENT_SEPARATOR);
     print(args...);
 }
+void printLine(auto... args)
+{
+    print(args...);
+    print(endl);
+}
 
-const set<char> ENDSTRING_CHARACTER = {'\n', ' ', '\r', '\0'};
-void read(int&a)        { scanf("%d"   , &a); }
-void read(long long&a)  { scanf("%lld" , &a); }
-void read(float&a)      { scanf("%f"   , &a); }
-void read(double&a)     { scanf("%lf"  , &a); }
-void read(char&a)       { scanf("%c"   , &a); }
-void readc(char&a)
+int       read(int&a)        { scanf("%d"   , &a); return a;}
+long long read(long long&a)  { scanf("%lld" , &a); return a;}
+float     read(float&a)      { scanf("%f"   , &a); return a;}
+double    read(double&a)     { scanf("%lf"  , &a); return a;}
+char      read(char&a)       { scanf("%c"   , &a); return a;}
+char readc(char&a)
 /** ignore all unneccesary characters */
 {
     char tempChar;
     do
     {
         scanf("%c", &tempChar);
-        print((int)tempChar);
     }
-    while(ENDSTRING_CHARACTER.count(tempChar) != 0);
+    while( tempChar == '\n' || tempChar == ' ' );
     a = tempChar;
+    return a;
 }
-void read(string&a, int maxLength = 2000000)
+string read(string&a)
 {
+    int maxLength = 2000000;
     char tempChrArr[maxLength];
     do
     {
         gets(tempChrArr);
     }
-    while(ENDSTRING_CHARACTER.count(tempChrArr[0] != 0));
+    while(tempChrArr[0] == '\0');
     a = tempChrArr;
+    return a;
 }
 void read(pair<auto,auto>&a)
 {
@@ -264,10 +270,11 @@ void readVector(vector<auto>&vectorName, ll startPos, ll endPos)
         read(vectorName[i]);
 }
 
-void readc(char&a, auto&... arg)
+char readc(char&a, auto&... arg)
 {
     readc(a);
     readc(arg...);
+    return a;
 }
 
 
@@ -310,7 +317,6 @@ int main()
 
 void solution()
 {
-
 }
 
 /// Hạnh đáng iu
